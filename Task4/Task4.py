@@ -7,6 +7,7 @@ def swap_case(s):
             new_string += letter.lower()
     return new_string
 
+
 if __name__ == '__main__':
     sentance = swap_case(input())
     print(sentance)
