@@ -1,26 +1,5 @@
-def list_second_min(items, second):
-    second_list = []
-    for x in items:
-        if x[1] == second:
-            second_list.append(x)
-    return second_list
-
-
-if __name__ == '__main__':
-    students_result = []
-    score_list = []
-    for x in range(int(input())):
-        name = input()
-        score = float(input())
-        score_list.append(score)
-        students_result.append([name, score])
-    second_min = (sorted(set(score_list)))[1]    
-    #print(students_result)
-    lowels_marks_list = list_second_min(students_result, second_min)
-    #print(lowels_marks_list)
-    lowels_marks_list.sort(key = lambda item: item[0])
-    for x in lowels_marks_list:
-        print(x[0])
-
-
-    
+students = [[input(), float(input())] for _ in range(int(input()))]
+students_sorted = (sorted(list(set([mark for name, mark in students]))))
+second_lowest_grade_students = [name for name, mark in students if mark == students_sorted[1]]
+for item in second_lowest_grade_students:
+    print(item)
